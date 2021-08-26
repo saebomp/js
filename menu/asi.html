@@ -28,12 +28,22 @@
     </div>
     <div class="mine">
         <h4>My Answer : </h4>
-        <p></p> 
+        <p>a.forEach(function (x) { console.log(x) })</p> 
     </div>
     <div class="answer">
       <h4>Correct Answer : </h4>
-      <p>
-      </p> 
+      <div class="code">
+        <p>let a = {
+          <span>a : 123</span>
+        };
+        </p>
+        <p>[a].forEach(function (x) {
+          <span>console.log(x)</span>
+        })
+        </p>
+      </div>
+      <p>Bracket notation is more expressive than dot notation because it allows a variable to specify all or part of the property name. (in this case put the a object inside an array) </p>
+      <p>[a] doesn't know what a is before put semicolon after the object a.</p>
     </div>
   </div>
   
