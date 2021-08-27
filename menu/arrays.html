@@ -14,31 +14,49 @@
     </div>
     <div class="contents">
         <div class="code">
-            What is the resulting output?
+            Create an Array that is prepopulated with 5 random numbers
         </div>
         <div class="code">
-            <p>let num = 0;</p>
-            <p>async function increment(){
-                <span>num += await 2; //num = num + await 2; // Promise.resolve(2)</span> 
-                <span>console.log(num);</span>
-            }</p>
-            <p>increment();</p>
-            <p>num += 1;</p>
-            <p>console.log(num);</p>
-        </div>
-        <div class="mine">
-            <h4>My Answer : </h4>
-            <p>2 -> 3</p> 
-            <p>
-                the function increment will wait until num become 2. when the num become 2, it will print 2 at console and then print 3 in the console withing the function.
-            </p>
+            <p>let a1</p>
+            <p>console.log('1', a1);</p>
+            <p>let a2</p>
+            <p>console.log('2', a2);</p>
         </div>
         <div class="answer">
             <h4>Correct Answer : </h4>
-            <p>1 -> 2</p> 
+            <div class="code">
+                <p>let a1 = Array.from ({
+                    <span>length: 5</span> 
+                }, n => Math.random())
+                </p>
+                <p>console.log('1', a1)</p><br />
+            </div>    
             <p>
-                console will display 1 because num += 1 is equivalent to num = num + 1 which means num = 1 <br />
-                main stack is finished and increment() will get executed when the num become 2
+                The Array.from() static method creates a new, shallow-copied Array instance from an array-like or iterable object.<br />
+                console.log(Array.from([1, 2, 3], x => x + x));<br />
+                // expected output: Array [2, 4, 6]<br /><br />
+            </p>
+            <div class="code">
+                <p>let a2 = new Array(5).fill(1).map(n => n * Math.random());
+                </p>
+                <p>console.log('2', a2)</p><br />
+            </div>
+            <p>
+                The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index. (value, 시작위치, 종료위치 (종료위치 포함안됨))<br />
+            </p>
+            <p>
+                const array1 = [1, 2, 3, 4];<br /><br />
+
+                // fill with 0 from position 2 until position 4<br />
+                console.log(array1.fill(0, 2, 4));<br />
+                // expected output: [1, 2, 0, 0]<br /><br />
+
+                // fill with 5 from position 1<br />
+                console.log(array1.fill(5, 1));<br />
+                // expected output: [1, 5, 5, 5]<br /><br />
+
+                console.log(array1.fill(6));<br />
+                // expected output: [6, 6, 6, 6]<br />
             </p>
           </div>
     </div>
