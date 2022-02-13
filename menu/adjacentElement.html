@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdjacentElementsProduct</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="title">
+    AdjacentElementsProduct
+    <span class="back"><a href="https://saebomp.github.io/jsinterview/"><svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm43.4 289.1c7.5 7.5 7.5 19.8 0 27.3-3.8 3.8-8.7 5.6-13.6 5.6s-9.9-1.9-13.7-5.7l-94-94.3c-6.9-7.6-6.7-19.3.6-26.6l95.4-95.7c7.5-7.5 19.7-7.6 27.3 0 7.5 7.5 7.6 19.7 0 27.3l-81.9 81 79.9 81.1z"></path></svg></a></span>
+  </div>
+  <div class="contents">
+    <div class="code">
+        Find largest adjacent product in array
+    </div>
+    <div class="code">
+        <p>const inputArray = [3,6,-2,-5,7,1]</p>
+        <p>const adjacentElementsProduct = inputArray => {</p>
+        <p><span>let largestProduct = inputArray[0] * inputArray[1]</span></p>
+        <p><span>//비교를 해서 더 큰 숫자를 찾기위해 넣음</span></p>
+
+        <br>
+        <p>
+            <span>for(let i = 0; i < inputArray.length; i++) {
+            <span>if(getProduct(inputArray, i) > largestProduct ) {
+            <span>largestProduct = getProduct(inputArray, i)</span>}</span>}</span>
+        </p>
+        <p>// 어레이를 돌려서 위의 숫자와 비교를 해준다음 더 크면 그 숫자를 반환함</p>
+        <p><span> return largestProduct</span></p>
+    }
+
+        <br>
+        <p><span>const getProduct = (inputArray, i) => (
+            <span>inputArray[i] * inputArray[i + 1]</span>
+        </span>)</p>
+        <p> //어레이를 돌리는데, 어레이 순서의 바로 옆에 것과 곱해줌</p>
+        <p>// console.log(adjacentElementsProduct(inputArray))</p>
+    </div>
+  </div>
+  
+
+<script>
+
+</script>
+</body>
+</html>
