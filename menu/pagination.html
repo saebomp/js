@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random number between two number</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="SlideWrap">
+        
+        <ul class="SlideImgWrap" id="SlideImgWrap">
+            <li id="1" class="SlideImg">이미지1</li>
+            <li class="SlideImg">이미지2</li>
+            <li class="SlideImg">이미지3</li>
+        </ul> <!-- slideimg-->
+
+        <div class="pvnt">
+            <a href="#" onclick="prev();">이전</a>
+            <a href="#" onclick="next();">다음</a>
+        </div>
+
+    </div> <!-- slide -->
+
+</div> <!-- wrap -->
+
+<script>
+ const SlideWidth=window.innerWidth; //브라우저 가로 길이
+    const SlideImg=document.getElementsByClassName('SlideImg');
+    const SlideImgWrap=document.getElementsByClassName('SlideImgWrap');
+    const SlideImgLength=document.getElementsByClassName('SlideImg').length; //리스트&버튼 갯수
+    const SlideImgWrapWidth= SlideWidth * SlideImgLength; //브라우저 가로길이 x 리스트 갯수
+    let moveSlide=true; //일시정지 유무 체크
+    let SlideIndex=0; //현재 슬라이드 위치
+    // let timer;
+
+    setWidth();
+    // startmove();
+
+    window.onresize= function(){
+        setWidth();
+    }
+
+    function setWidth(){
+        console.log("갯수: "+SlideImgLength);
+        console.log("가로길이: "+SlideWidth);
+        console.log("총 가로길이: "+SlideImgWrapWidth);
+
+        for(let i=0;i<SlideImgLength;i++){
+            SlideImg[i].style.width = SlideWidth + 'px';
+            console.log(i);
+        };
+        
+        SlideImgWrap[0].style.width = SlideImgWrapWidth + 'px';
+    }
+
+    function btnSlide(n){
+        SlideImgWrap[0].style.marginLeft = '-'+ ( SlideWidth * n ) +'px';
+
+        SlideIndex=n; 
+        console.log("인덱스: "+SlideIndex);
+        return;
+    }
+
+
+    function prev(){
+        if( SlideIndex > 0 ){
+            SlideIndex--;
+            btnSlide(SlideIndex);
+        }else{
+            SlideIndex = SlideImgLength-1;
+            btnSlide(SlideIndex);
+        }
+        console.log("취소 누른 인덱스: " + SlideIndex);
+        console.log("ddd: " + (SlideImgLength-1) );
+    }
+
+    function next(){
+        if( SlideIndex < SlideImgLength-1 ){
+            SlideIndex++;
+            btnSlide(SlideIndex);
+        }else if( SlideIndex = SlideImgLength-1){
+            SlideIndex=0;
+            btnSlide(SlideIndex);
+        }
+    }
+
+
+</script>
+</body>
+</html>
+
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow -->
+<!-- https://im-developer.tistory.com/97#google_vignette -->
+<!-- https://blog.naver.com/o414_h/222607493856 -->
