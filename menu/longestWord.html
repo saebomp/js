@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>longestWord</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="title">
+    Find Longest Word
+    <span class="back"><a href="https://saebomp.github.io/jsinterview/"><svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm43.4 289.1c7.5 7.5 7.5 19.8 0 27.3-3.8 3.8-8.7 5.6-13.6 5.6s-9.9-1.9-13.7-5.7l-94-94.3c-6.9-7.6-6.7-19.3.6-26.6l95.4-95.7c7.5-7.5 19.7-7.6 27.3 0 7.5 7.5 7.6 19.7 0 27.3l-81.9 81 79.9 81.1z"></path></svg></a></span>
+  </div>
+  <div class="contents">
+    <div class="code">
+      <p>const longestWord = (str) => {
+        <span>let words = str.split(" ")</span>
+        <span> //문장을 단어 단위로 나눔, words는 나눠진 단어의 어레이</span>
+        <span>let longestWord = ""</span>
+        <br />
+
+        <span>
+          for(let word of words) {
+            <span>if(word.length > longestWord.length) { 
+              <span>longestWord = word</span>}
+            </span>
+            }
+            <span>return longestWord</span>
+        </span>
+      </p>}
+      <p>//longestWord는 0으로 시작해서 words의 단어 하나하나와 비교하고 더 큰 숫자가 나올때마다 longestWord에 저장됨</p>
+      <br>
+      <p>console.log(longestWord("I woke up early today"))</p>
+      <p>console.log(longestWord("I went straight to the beach"))</p>
+    </div>
+    <div class="answer">
+      <p>for...of 명령문은 반복가능한 객체 (Array, Map, Set, String, TypedArray, arguments 객체 등을 포함)에 대해서 반복하고 각 개별 속성값에 대해 실행되는 문이 있는 사용자 정의 반복 후크를 호출하는 루프를 생성</p>
+
+      <br>
+      <p>const array1 = ['a', 'b', 'c'];<br>
+
+        for (const element of array1) {<br>
+          console.log(element);<br>
+        }<br><br>
+        
+        // expected output: "a"<br>
+        // expected output: "b"<br>
+        // expected output: "c"<br>
+        </p>
+    </div>
+  </div>
+  
+
+<script>
+
+</script>
+</body>
+</html>
